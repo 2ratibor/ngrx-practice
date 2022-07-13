@@ -3,6 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Store } from '@ngrx/store';
 
 import { registerAction } from '../../store/actions/register.action';
+import { RegisterRequestInterface } from '../../types/registerRequest.interface';
 
 
 @Component({
@@ -39,7 +40,7 @@ export class RegisterComponent implements OnInit {
                 username: this.form.get('userName').value,
                 email: this.form.get('email').value,
                 password: this.form.get('password').value
-            })
+            } as RegisterRequestInterface)
         );
     }
 }
